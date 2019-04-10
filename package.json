@@ -9,9 +9,14 @@
   "scripts": {
     "clean": "rm dist/bundle.js",
     "start": "parcel src/index.html",
-    "build-prod": "parcel build src/index.html"
+    "build-prod": "parcel build src/index.html",
+    "add-locale": "lingui add-locale",
+    "extract": "lingui extract",
+    "compile": "lingui compile"
   },
   "dependencies": {
+    "@lingui/core": "^2.7.4",
+    "@lingui/react": "^2.7.4",
     "@types/react": "^16.8.13",
     "@types/react-dom": "^16.8.3",
     "react": "^16.8.6",
@@ -23,11 +28,20 @@
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
+    "@lingui/cli": "^2.7.4",
+    "@lingui/macro": "^2.7.4",
     "@vue/component-compiler-utils": "^2.6.0",
+    "babel-plugin-macros": "^2.5.1",
     "parcel-bundler": "^1.12.3",
     "pug": "^2.0.3",
     "sass": "^1.18.0",
     "typescript": "^3.4.2",
     "vue-template-compiler": "^2.6.10"
+  },
+  "lingui": {
+    "localeDir": "src/locales/",
+    "srcPathDirs": ["src/"],
+    "format": "lingui",
+    "pseudoLocale": "pi-r8"
   }
 }
