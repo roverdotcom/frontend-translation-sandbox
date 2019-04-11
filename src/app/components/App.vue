@@ -4,10 +4,13 @@
 
 <script lang="ts">
 import Vue from "vue";
+import something from '@rover/utilities/translation';
 export default Vue.extend({
   data() {
+    console.log(something);
     return {
-      app: "Vue"
+      app: "Vue",
+      someString: "some string"
     };
   }
 });
