@@ -1,5 +1,5 @@
 <template lang="pug">
-  .container Hello {{app}}
+  .container {{someString}}
 </template>
 
 <script lang="ts">
@@ -7,10 +7,9 @@ import Vue from "vue";
 import something from '@rover/utilities/translation';
 export default Vue.extend({
   data() {
-    console.log(something);
     return {
       app: "Vue",
-      someString: "some string"
+      someString: "We’re The Dog People. The nation’s largest network of 5‑star pet sitters and dog walkers."
     };
   }
 });
