@@ -1,4 +1,36 @@
 body {
-  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+body, input, button, select {
+  font-family: 'Baloo', cursive;
+}
+
+.card {
+  color: #fff;
   background-color: black;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding: 2px 16px;
+  margin-bottom: 10px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+
+.bg-backbone {
+  background-color: #4162a8;
+}
+
+.bg-vue {
+  background-color: #4fc08d;
+}
+
+.bg-react {
+  background-color: #282c34;
+  color: #61dafb;
 }

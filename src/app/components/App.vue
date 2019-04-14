@@ -1,22 +1,23 @@
 <template lang="pug">
-  .container {{someString}}
+  div
+    h3.bg-vue.card {{bookingSummary}}
+    .bg-vue.card {{reminder}}
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue';
 import something from '@rover/utilities/translation';
 export default Vue.extend({
   data() {
+    const petList = global.Rover.context.petList;
     return {
-      app: "Vue",
-      someString: "We’re The Dog People. The nation’s largest network of 5‑star pet sitters and dog walkers."
+      reminder:
+        `Make sure all the information for ${petList.join(", ")} is up-to-date for your sitter`,
+      bookingSummary: `Booking for ${petList.length} pet`,
     };
-  }
+  },
 });
 </script>
 
 <style lang="scss" scoped>
-.container {
-  color: green;
-}
 </style>
