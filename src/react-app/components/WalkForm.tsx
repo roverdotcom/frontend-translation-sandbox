@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
+import { StateType } from '@rover/store';
 
-const WalkForm = () => {
-  const [numWalk, setNumWalk] = useState(1);
+interface Props {
+  state: StateType;
+  onSubmit: (num: number) => any,
+}
+
+const WalkForm = ({state, onSubmit}: Props) => {
+  const [numWalk, setNumWalk] = useState(state.numWalk || 0);
   return (
     <div className="bg-react card">
-      <label> Number of walk: 
-        <input type="number" value={numWalk} onChange={e => setNumWalk(parseInt(e.target.value, 10))} />
+      <label> Number of walks:{" "} 
+        <input type="number" value={numWalk} onChange={e => setNumWalk(parseInt(e.target.value || 0, 10))} />
       </label>
-      <button>Submit</button>
+      <button onClick={() => onSubmit(numWalk)}>Submit</button>
     </div>
   );
 };

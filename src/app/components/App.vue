@@ -7,13 +7,25 @@
 <script lang="ts">
 import Vue from 'vue';
 import something from '@rover/utilities/translation';
+import { StateType } from '@rover/store';
 export default Vue.extend({
+  props: ['store'],
+  computed: {
+    petList() {
+      if (!this.store) {
+        return [];
+      }
+      return this.store.getState().petList;
+    },
+    reminder() {
+      return `Make sure all the information for ${this.petList.join(", ")} is up-to-date for your sitter`;
+    },
+    bookingSummary() {
+      return `Booking for ${this.petList.length} pet`
+    }
+  },
   data() {
-    const petList = global.Rover.context.petList;
     return {
-      reminder:
-        `Make sure all the information for ${petList.join(", ")} is up-to-date for your sitter`,
-      bookingSummary: `Booking for ${petList.length} pet`,
     };
   },
 });

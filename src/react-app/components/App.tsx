@@ -2,15 +2,17 @@ import * as React from 'react';
 
 import SelectLanguage from './SelectLanguage';
 import WalkForm from './WalkForm';
+import { StateType } from '@rover/store';
 
 interface Props {
-  name: string;
+  state: StateType;
+  onSubmit: (num: number) => any,
 }
 
-const App = ({ name }: Props) => (
+const App = (props: Props) => (
   <React.Fragment>
     <SelectLanguage />
-    <WalkForm />
+    <WalkForm {...props} />
   </React.Fragment>
 );
 

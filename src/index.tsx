@@ -1,19 +1,25 @@
 import 'jquery'
-import * as React from 'react';
+import React from 'react';
 import * as ReactDOM from "react-dom";
 import Vue from "vue";
+import { ThunkDispatch } from 'redux-thunk';
+import { connect, Provider } from 'react-redux'
 
+import store, {StateType, ActionTypes ,submitAction} from './store';
 import HeaderView from './app/backbone/views/header_view';
 import VueApp from './app/components/App.vue'
 import App from './react-app/components/App'
 import "./styles.css";
 
-global.Rover = {};
-global.Rover.context = {
-  customerSupportNumber: "888-888-8888",
-  petList: ["Woodie", "Kitty"]
-};
+const mapStateToProps = (state: StateType) => ({state});
+const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, ActionTypes>) => ({
+  onSubmit: (num: number) => dispatch(submitAction(num)),
+})
 
-ReactDOM.render(<App name="Rover" />, document.getElementById('react-app'));
-new Vue(VueApp).$mount('#vue-app') ;
+const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App)
+ReactDOM.render(<Provider store={store}><ConnectedApp /></Provider>, document.getElementById('react-app'));
+new Vue({
+  el: "#vue-app",
+  render: (h) => h(VueApp, {props: {store}})
+});
 new HeaderView();
