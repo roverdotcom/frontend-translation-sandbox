@@ -2,13 +2,14 @@ import React from 'react';
 import { StateType } from '@rover/store';
 
 interface Props {
+  submitText?: string; 
   state: StateType;
   onSubmit: () => void,
   onUpdatePetlist: (pets: string[]) => void,
   onUpdateNumWalk: (num: number) => void,
 }
 
-const WalkForm = ({state, onSubmit, onUpdateNumWalk, onUpdatePetlist}: Props) => {
+const WalkForm = ({submitText, state, onSubmit, onUpdateNumWalk, onUpdatePetlist}: Props) => {
   return (
     <div className="bg-react card">
       <label> Number of walks:{" "} 
@@ -17,9 +18,13 @@ const WalkForm = ({state, onSubmit, onUpdateNumWalk, onUpdatePetlist}: Props) =>
       <label> Pets:{" "} 
         <input value={state.petList} onChange={e => onUpdatePetlist((e.target.value || '').split(",").map((pet) => pet.trim()))} />
       </label>
-      <button onClick={() => onSubmit()}>Submit</button>
+      <button onClick={() => onSubmit()}>{submitText}</button>
     </div>
   );
 };
+
+WalkForm.defaultProps = {
+  submitText: `Submit`
+}
 
 export default WalkForm;
