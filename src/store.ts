@@ -1,5 +1,7 @@
 import { Action, createStore, applyMiddleware } from 'redux';
-import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk'
+import thunk, { ThunkAction } from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension';
+
 
 
 const INITIAL_STATE = {
@@ -76,7 +78,7 @@ export function reducer(state=INITIAL_STATE, action: ActionTypes): StateType {
   }
 }
 
-const store = createStore(reducer, applyMiddleware(thunk));
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 export default store;
 
 
