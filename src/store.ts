@@ -1,63 +1,70 @@
 import { Action, createStore, applyMiddleware } from 'redux';
-import thunk, { ThunkAction } from 'redux-thunk'
+import thunk, { ThunkAction } from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-
-
 const INITIAL_STATE = {
-  petList: ["Woodie", "Kitty"],
+  petList: ['Woodie', 'Kitty'],
   numWalk: 0,
-  lang: 'en-us'
-}
+  lang: 'en-us',
+};
 
 export type StateType = typeof INITIAL_STATE;
 
 const SUBMIT: 'submit' = 'submit';
-const UPDATE_NUM_WALK: "updateNumWalk" = 'updateNumWalk';
-const UPDATE_PET_LIST: "updatePetList" = 'updatePetList';
-const UPDATE_LANG: "updateLang" ='updateLang';
+const UPDATE_NUM_WALK: 'updateNumWalk' = 'updateNumWalk';
+const UPDATE_PET_LIST: 'updatePetList' = 'updatePetList';
+const UPDATE_LANG: 'updateLang' = 'updateLang';
 
 export function updateNumWalkAction(num: number) {
   return {
     type: UPDATE_NUM_WALK,
-    payload: num
-  }
+    payload: num,
+  };
 }
 
 export function updatePetListAction(pets: string[]) {
   return {
     type: UPDATE_PET_LIST,
-    payload: pets
-  }
-} 
+    payload: pets,
+  };
+}
 
 export function updateLangAction(lang: string) {
   return {
     type: UPDATE_LANG,
-    payload: lang
-  }
-} 
+    payload: lang,
+  };
+}
 
 // TODO update type
-export function submitAction(): ThunkAction<Promise<any>, StateType, void, Action> {
+export function submitAction(): ThunkAction<
+  Promise<any>,
+  StateType,
+  void,
+  Action
+> {
   return (dispatch, getState) => {
     return Promise.resolve(
       setTimeout(() => {
-        const state = getState()
-        alert(`Submitted: ${state.numWalk} walks for ${state.petList.join(', ')}`);
+        const state = getState();
+        alert(
+          `Submitted: ${state.numWalk} walks for ${state.petList.join(', ')}`
+        );
       })
     );
   };
 }
 
-export type UpdateNumWalkActionType = ReturnType<typeof updateNumWalkAction> 
-export type updatePetListActionType = ReturnType<typeof updatePetListAction>
-export type updateLangActionType = ReturnType<typeof updateLangAction>
-export type ActionTypes = UpdateNumWalkActionType | updatePetListActionType | updateLangActionType;
+export type UpdateNumWalkActionType = ReturnType<typeof updateNumWalkAction>;
+export type updatePetListActionType = ReturnType<typeof updatePetListAction>;
+export type updateLangActionType = ReturnType<typeof updateLangAction>;
+export type ActionTypes =
+  | UpdateNumWalkActionType
+  | updatePetListActionType
+  | updateLangActionType;
 
-
-export function reducer(state=INITIAL_STATE, action: ActionTypes): StateType {
-  switch(action.type) {
+export function reducer(state = INITIAL_STATE, action: ActionTypes): StateType {
+  switch (action.type) {
     case UPDATE_NUM_WALK:
       return {
         ...state,
@@ -67,12 +74,12 @@ export function reducer(state=INITIAL_STATE, action: ActionTypes): StateType {
       return {
         ...state,
         petList: action.payload,
-      }
+      };
     case UPDATE_LANG:
       return {
         ...state,
-        lang: action.payload
-      }
+        lang: action.payload,
+      };
     default:
       return state;
   }
@@ -80,9 +87,3 @@ export function reducer(state=INITIAL_STATE, action: ActionTypes): StateType {
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 export default store;
-
-
-
-
-
-

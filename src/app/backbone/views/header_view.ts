@@ -9,8 +9,7 @@ const HeaderView = Backbone.View.extend({
     this.$el.html(`
       <h1 class="card bg-backbone">We’re The Dog People.</h1>
       <h3 class="card bg-backbone">The nation’s largest network of 5‑star pet sitters and dog walkers.</h2>
-    `
-    );
+    `);
   },
 });
 
