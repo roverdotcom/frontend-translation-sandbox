@@ -1,16 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
+
+import { StateType } from '@rover/store';
 
 const LANG_NAMES: {[key:string]: string} = {'en-us': "US English", 'pi-r8': "Pirate"};
 const DEFAULT_LANG = 'en-us';
 
-const SelectLanguage = () => {
-  const [lang, setLang] = useState(DEFAULT_LANG);
+interface Props {
+  state: StateType;
+  onUpdateLang: (lang: string) => void,
+}
+
+const SelectLanguage = ({state, onUpdateLang}: Props) => {
   return (
     <div className="bg-react card">
-      <select onChange={e => setLang(e.target.value)} defaultValue={DEFAULT_LANG}>
+      <select onChange={e => onUpdateLang(e.target.value)} defaultValue={state.lang}>
         {Object.keys(LANG_NAMES).map((lang) => <option key={lang} value={lang}>{lang}</option>)}
       </select>
-      <div>Current language is {LANG_NAMES[lang]}</div>
+      <div>Current language is {LANG_NAMES[state.lang]}</div>
     </div>
   );
 };

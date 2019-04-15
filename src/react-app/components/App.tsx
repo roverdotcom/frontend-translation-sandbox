@@ -6,12 +6,15 @@ import { StateType } from '@rover/store';
 
 interface Props {
   state: StateType;
-  onSubmit: (num: number) => any,
+  onSubmit: () => any,
+  onUpdateLang: (lang: string) => void,
+  onUpdatePetlist: (pets: string[]) => void,
+  onUpdateNumWalk: (num: number) => void,
 }
 
 const App = (props: Props) => (
   <React.Fragment>
-    <SelectLanguage />
+    <SelectLanguage {...props}/>
     <WalkForm {...props} />
   </React.Fragment>
 );

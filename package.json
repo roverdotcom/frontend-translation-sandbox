@@ -12,8 +12,7 @@
     "start": "parcel src/index.html",
     "build-prod": "parcel build src/index.html",
     "add-locale": "lingui add-locale",
-    "extract": "lingui extract",
-    "compile": "lingui compile"
+    "extract": "lingui extract && lingui compile"
   },
   "dependencies": {
     "@lingui/core": "^2.7.4",
@@ -58,6 +57,7 @@
       "src/"
     ],
     "format": "lingui",
-    "pseudoLocale": "pi-r8"
+    "pseudoLocale": "pi-r8",
+    "compileNamespace": "es"
   }
 }

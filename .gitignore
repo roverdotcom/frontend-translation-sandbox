@@ -24,5 +24,5 @@ chrome-user-data
 *.swo
 dist/
 .cache/
-locale/_build/
-locale/**/*.js
+**/locales/_build/
+**/locales/**/*.js
