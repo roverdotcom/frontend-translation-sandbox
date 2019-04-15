@@ -5,7 +5,7 @@ import Vue from "vue";
 import { ThunkDispatch } from 'redux-thunk';
 import { connect, Provider } from 'react-redux'
 
-import store, {StateType, ActionTypes ,submitAction} from './store';
+import store, {StateType, ActionTypes ,submitAction, updateNumWalkAction, updatePetListAction, updateLangAction} from './store';
 import HeaderView from './app/backbone/views/header_view';
 import VueApp from './app/components/App.vue'
 import App from './react-app/components/App'
@@ -13,13 +13,22 @@ import "./styles.css";
 
 const mapStateToProps = (state: StateType) => ({state});
 const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, ActionTypes>) => ({
-  onSubmit: (num: number) => dispatch(submitAction(num)),
+  onSubmit: () => dispatch(submitAction()),
+  onUpdateNumWalk: (numWalk: number) => dispatch(updateNumWalkAction(numWalk)),
+  onUpdateLang: (lang: string) => dispatch(updateLangAction(lang)),
+  onUpdatePetlist: (petList: string[]) => dispatch(updatePetListAction(petList)),
+
 })
 
 const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App)
 ReactDOM.render(<Provider store={store}><ConnectedApp /></Provider>, document.getElementById('react-app'));
-new Vue({
+const vue = new Vue({
   el: "#vue-app",
-  render: (h) => h(VueApp, {props: {store}})
+  data: { state: store.getState() },
+  render: function (h) { return h(VueApp, {props: {state: this.state}}); }
 });
 new HeaderView();
+store.subscribe(() => {
+  new HeaderView();
+  vue.state = store.getState();
+})

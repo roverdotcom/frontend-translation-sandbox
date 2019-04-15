@@ -13,6 +13,9 @@ const WalkForm = ({state, onSubmit}: Props) => {
       <label> Number of walks:{" "} 
         <input type="number" value={numWalk} onChange={e => setNumWalk(parseInt(e.target.value || 0, 10))} />
       </label>
+      <label> Pets:{" "} 
+        <input value={numWalk} onChange={e => setNumWalk(parseInt(e.target.value || 0, 10))} />
+      </label>
       <button onClick={() => onSubmit(numWalk)}>Submit</button>
     </div>
   );

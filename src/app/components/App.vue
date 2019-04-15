@@ -9,13 +9,10 @@ import Vue from 'vue';
 import something from '@rover/utilities/translation';
 import { StateType } from '@rover/store';
 export default Vue.extend({
-  props: ['store'],
+  props: ['state'],
   computed: {
-    petList() {
-      if (!this.store) {
-        return [];
-      }
-      return this.store.getState().petList;
+    petList(): string[] {
+      return this.state.petList;
     },
     reminder() {
       return `Make sure all the information for ${this.petList.join(", ")} is up-to-date for your sitter`;
