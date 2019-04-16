@@ -1,1 +1,3 @@
-export type Untranslated = string | { id: string, defaults?: string, values?: {} };
+export type Untranslated =
+  | string
+  | { id: string; defaults?: string; values?: {} };
