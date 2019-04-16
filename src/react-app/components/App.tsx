@@ -21,6 +21,3 @@ const App = (props: Props) => (
 );
 
 export default App;
-
-"Oops! We ran into a problem and couldn't archive your conversation! Please contact us at {0} for assistance.";
-"{numUnitsPerDay, plural, one {# time per day} other {# times per day}}"
