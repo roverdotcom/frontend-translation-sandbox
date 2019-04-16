@@ -6,7 +6,8 @@
         "src/react-app/components/SelectLanguage.tsx",
         17
       ]
-    ]
+    ],
+    "obsolete": true
   },
   "Make sure all the information for {pets} is up-to-date for your sitter": {
     "translation": "",
@@ -15,7 +16,8 @@
         "src/app/constants/translationConstants.ts",
         4
       ]
-    ]
+    ],
+    "obsolete": true
   },
   "Number of walks:": {
     "translation": "",
@@ -24,7 +26,8 @@
         "src/react-app/components/WalkForm.tsx",
         7
       ]
-    ]
+    ],
+    "obsolete": true
   },
   "Pets:": {
     "translation": "",
@@ -33,7 +36,8 @@
         "src/react-app/components/WalkForm.tsx",
         12
       ]
-    ]
+    ],
+    "obsolete": true
   },
   "Pirate": {
     "translation": "",
@@ -42,7 +46,8 @@
         "src/react-app/components/SelectLanguage.tsx",
         6
       ]
-    ]
+    ],
+    "obsolete": true
   },
   "Submit": {
     "translation": "",
@@ -51,7 +56,8 @@
         "src/react-app/components/WalkForm.tsx",
         21
       ]
-    ]
+    ],
+    "obsolete": true
   },
   "Submitted: {0} walks for {1}": {
     "translation": "",
@@ -60,7 +66,8 @@
         "src/store.ts",
         39
       ]
-    ]
+    ],
+    "obsolete": true
   },
   "The nation’s largest network of 5‑star pet sitters and dog walkers.": {
     "translation": "",
@@ -69,7 +76,8 @@
         "src/app/backbone/views/header_view.ts",
         11
       ]
-    ]
+    ],
+    "obsolete": true
   },
   "US English": {
     "translation": "",
@@ -78,7 +86,8 @@
         "src/react-app/components/SelectLanguage.tsx",
         5
       ]
-    ]
+    ],
+    "obsolete": true
   },
   "We’re The Dog People.": {
     "translation": "",
@@ -87,7 +96,8 @@
         "src/app/backbone/views/header_view.ts",
         10
       ]
-    ]
+    ],
+    "obsolete": true
   },
   "hello": {
     "0": "h",
@@ -104,6 +114,7 @@
         "src/app/constants/translationConstants.ts",
         5
       ]
-    ]
+    ],
+    "obsolete": true
   }
 }

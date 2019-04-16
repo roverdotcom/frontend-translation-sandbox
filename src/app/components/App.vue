@@ -15,18 +15,18 @@ export default Vue.extend({
       return this.state.petList;
     },
     reminder() {
-      return `Make sure all the information for ${this.petList.join(", ")} is up-to-date for your sitter`;
+      return `Make sure all the information for ${this.petList.join(
+        ', '
+      )} is up-to-date for your sitter`;
     },
     bookingSummary() {
-      return `Booking for ${this.petList.length} pet`
-    }
+      return `Booking for ${this.petList.length} pet`;
+    },
   },
   data() {
-    return {
-    };
+    return {};
   },
 });
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

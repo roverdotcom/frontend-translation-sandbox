@@ -4,7 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { t } from '@lingui/macro';
 
 // WARNING: in this webapp, this would not be imported directly. Don't use this i18n but use one inside thunk
-import donotusei18n from '@rover/utilities/translation'
+import donotusei18n from '@rover/utilities/translation';
 
 const INITIAL_STATE = {
   petList: ['Woodie', 'Kitty'],
@@ -89,5 +89,10 @@ export function reducer(state = INITIAL_STATE, action: ActionTypes): StateType {
   }
 }
 
-const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk.withExtraArgument({i18n: donotusei18n}))));
+const store = createStore(
+  reducer,
+  composeWithDevTools(
+    applyMiddleware(thunk.withExtraArgument({ i18n: donotusei18n }))
+  )
+);
 export default store;

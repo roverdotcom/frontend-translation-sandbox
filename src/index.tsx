@@ -52,7 +52,7 @@ const vue = new Vue({
 });
 new HeaderView();
 store.subscribe(() => {
-  const state = store.getState()
+  const state = store.getState();
   i18n.activate(state.lang);
   new HeaderView();
   vue.state = state;
