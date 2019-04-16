@@ -89,14 +89,6 @@
       ]
     ]
   },
-  "hello": {
-    "0": "h",
-    "1": "e",
-    "2": "l",
-    "3": "l",
-    "4": "o",
-    "obsolete": true
-  },
   "{petNum, plural, one {Booking for # pet} other {Booking for # pets}}": {
     "translation": "",
     "origin": [

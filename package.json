@@ -8,7 +8,7 @@
   "license": "ISC",
   "scripts": {
     "clean": "rm dist/bundle.js",
-    "format": "prettier --write './src/**/*.{ts,tsx,js,jsx,css,html}'",
+    "format": "prettier --write './src/**/*.{ts,tsx,js,jsx,vue,css,html}'",
     "start": "parcel src/index.html",
     "build-prod": "parcel build src/index.html",
     "add-locale": "lingui add-locale",
@@ -57,7 +57,7 @@
       "src/"
     ],
     "format": "lingui",
-    "pseudoLocale": "pi-r8",
+    "pseudoLocale": "en-pl",
     "compileNamespace": "es"
   }
 }
