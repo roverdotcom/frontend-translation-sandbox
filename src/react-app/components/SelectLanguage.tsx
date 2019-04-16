@@ -3,7 +3,6 @@ import React from 'react';
 import { StateType } from '@rover/store';
 
 const LANG_NAMES: {[key:string]: string} = {'en-us': "US English", 'pi-r8': "Pirate"};
-const DEFAULT_LANG = 'en-us';
 
 interface Props {
   state: StateType;
