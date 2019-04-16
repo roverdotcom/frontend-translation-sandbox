@@ -1,7 +1,7 @@
 <template lang="pug">
   div
-    h3.bg-vue.card {{bookingSummary}}
-    .bg-vue.card {{reminder}}
+    h3.bg-vue.card {{bookingSummary()}}
+    .bg-vue.card {{reminder()}}
 </template>
 
 <script lang="ts">
@@ -14,6 +14,8 @@ export default Vue.extend({
     petList(): string[] {
       return this.state.petList;
     },
+  },
+  methods: {
     reminder() {
       return `Make sure all the information for ${this.petList.join(
         ', '
