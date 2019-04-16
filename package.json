@@ -12,7 +12,8 @@
     "start": "parcel src/index.html",
     "build-prod": "parcel build src/index.html",
     "add-locale": "lingui add-locale",
-    "extract": "lingui extract && lingui compile"
+    "lingui": "lingui",
+    "postlingui": "lingui compile"
   },
   "dependencies": {
     "@lingui/core": "^2.7.4",

@@ -1,1 +1,1 @@
-alias fe=yarn
+alias fe="npm run"
