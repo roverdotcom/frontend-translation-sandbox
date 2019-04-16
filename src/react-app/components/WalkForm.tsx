@@ -22,7 +22,6 @@ const WalkForm = ({
         {' '}
         Number of walks:{' '}
         <input
-          placeholder="Walks"
           type="number"
           value={state.numWalk}
           onChange={e => onUpdateNumWalk(parseInt(e.target.value || '0', 10))}
@@ -32,7 +31,6 @@ const WalkForm = ({
         {' '}
         Pets:{' '}
         <input
-          placeholder="Pets"
           value={state.petList}
           onChange={e =>
             onUpdatePetlist(
