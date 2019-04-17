@@ -1,14 +1,14 @@
 import { Action, createStore, applyMiddleware } from 'redux';
 import thunk, { ThunkAction } from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { t } from '@lingui/macro';
+import { t, plural } from '@lingui/macro';
 
 // WARNING: in this webapp, this would not be imported directly. Don't use this i18n but use one inside thunk
 import donotusei18n from '@rover/utilities/translation';
 
 const INITIAL_STATE = {
   petList: ['Woodie', 'Kitty'],
-  numWalk: 0,
+  numWalk: 1,
   lang: 'en-us',
 };
 

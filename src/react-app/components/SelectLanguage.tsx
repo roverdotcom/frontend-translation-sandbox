@@ -1,6 +1,8 @@
 import React from 'react';
 
 import { StateType } from '@rover/store';
+import { Trans, t } from '@lingui/macro';
+import { I18n } from '@lingui/react';
 
 const LANG_NAMES: { [key: string]: string } = {
   'en-us': `US English`,

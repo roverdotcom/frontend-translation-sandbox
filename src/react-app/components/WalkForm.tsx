@@ -1,5 +1,6 @@
 import React from 'react';
 import { StateType } from '@rover/store';
+import { Trans, t } from '@lingui/macro';
 
 interface Props {
   submitText?: string;

@@ -6,8 +6,8 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import something from '@rover/utilities/translation';
 import { StateType } from '@rover/store';
+import { appConstants } from '@rover/app/constants/translationConstants';
 export default Vue.extend({
   props: ['state'],
   computed: {
