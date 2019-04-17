@@ -47,12 +47,16 @@ export function submitAction(): ThunkAction<
   void,
   Action
 > {
-  return (dispatch, getState) => {
+  return (dispatch, getState, {i18n}: any) => {
     return Promise.resolve(
       setTimeout(() => {
         const state = getState();
         alert(
-          `Submitted: ${state.numWalk} walks for ${state.petList.join(', ')}`
+          i18n._(plural({
+            value: state.numWalk,
+            one: `Submitted: # walk for ${state.petList.join(', ')}`,
+            other: `Submitted: # walks for ${state.petList.join(', ')}`
+          }))
         );
       })
     );

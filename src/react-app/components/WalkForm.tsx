@@ -21,7 +21,8 @@ const WalkForm = ({
     <div className="bg-react card">
       <label>
         {' '}
-        Number of walks:{' '}
+        {/* <Trans>Number of walks:</Trans> */}
+        <Trans id={t`Number of walks:`} />{' '}
         <input
           type="number"
           value={state.numWalk}
@@ -30,7 +31,7 @@ const WalkForm = ({
       </label>
       <label>
         {' '}
-        Pets:{' '}
+        <Trans id={t`Pets`} />{' '}
         <input
           value={state.petList}
           onChange={e =>
@@ -40,13 +41,15 @@ const WalkForm = ({
           }
         />
       </label>
-      <button onClick={() => onSubmit()}>{submitText}</button>
+      <button onClick={() => onSubmit()}>
+        <Trans id={submitText} />
+      </button>
     </div>
   );
 };
 
 WalkForm.defaultProps = {
-  submitText: `Submit`,
+  submitText: t`Submit`,
 };
 
 export default WalkForm;
