@@ -4,14 +4,14 @@
     .bg-vue.card {{reminder()}}
 </template>
 
-<script lang="ts">
+<script lang="js">
 import Vue from 'vue';
 import { StateType } from '@rover/store';
 import { appConstants } from '@rover/app/constants/translationConstants';
 export default Vue.extend({
   props: ['state'],
   computed: {
-    petList(): string[] {
+    petList() {
       return this.state.petList;
     },
   },
