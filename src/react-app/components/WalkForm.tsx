@@ -21,8 +21,7 @@ const WalkForm = ({
     <div className="bg-react card">
       <label>
         {' '}
-        {/* <Trans>Number of walks:</Trans> */}
-        <Trans id={t`Number of walks:`} />{' '}
+        <Trans>Number of walks:</Trans>
         <input
           type="number"
           value={state.numWalk}
@@ -31,7 +30,7 @@ const WalkForm = ({
       </label>
       <label>
         {' '}
-        <Trans id={t`Pets`} />{' '}
+        <Trans>Pets</Trans>
         <input
           value={state.petList}
           onChange={e =>
