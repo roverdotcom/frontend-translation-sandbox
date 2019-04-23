@@ -17,5 +17,9 @@ To run in hot module reloading mode:
 yarn start
 ```
 
-After making changes, you can use `fe lingui extract` to extract translation
+You can play around with the app at this point. Try changing some values and hit submit
+
+To see the app fully translated, checkout `translation` branch and select `pirate` language from the dropdown
+
+To play around with making translation change, start with `master`, make some changes, run `fe lingui extract`, refresh the page. You should the strings get translated when switching to `pirate`
 
