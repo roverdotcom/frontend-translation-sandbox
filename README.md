@@ -1,32 +1,21 @@
-# empty-project-babel-css-react-typescript
-
-Empty project.
-
 ## Building and running on localhost
 
-First install dependencies:
+Get some alias for the projects:
+```sh
+source ./profile
+```
+
+Install dependencies:
 
 ```sh
-npm install
+yarn
 ```
 
 To run in hot module reloading mode:
 
 ```sh
-npm start
+yarn start
 ```
 
-To create a production build:
-
-```sh
-npm run build-prod
-```
-
-## Running
-
-Open the file `dist/index.html` in your browser
-
-## Credits
-
-Created with [createapp.dev - an online tool for creating webpack and parcel projects](https://createapp.dev/)
+After making changes, you can use `fe lingui extract` to extract translation
 
