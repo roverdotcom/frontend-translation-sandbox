@@ -17,11 +17,12 @@ export default Vue.extend({
   },
   methods: {
     reminder() {
-      return `Make sure all the information for ${this.petList.join(
+      return appConstants.reminder(this.petList.join(
         ', '
-      )} is up-to-date for your sitter`;
+      ))
     },
     bookingSummary() {
+      return appConstants.bookingSummary(this.petList.length);
       return `Booking for ${this.petList.length} pet`;
     },
   },

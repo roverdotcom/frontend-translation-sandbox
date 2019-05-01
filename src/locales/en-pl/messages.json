@@ -1,10 +1,119 @@
 {
+  "Current language is {0}": {
+    "translation": "",
+    "origin": [
+      [
+        "src/react-app/components/SelectLanguage.tsx",
+        16
+      ]
+    ]
+  },
+  "Make sure all the information for {petList} is up-to-date for your sitter": {
+    "translation": "",
+    "origin": [
+      [
+        "src/app/constants/translationConstants.ts",
+        5
+      ]
+    ]
+  },
+  "Number of walks:": {
+    "translation": "",
+    "origin": [
+      [
+        "src/react-app/components/WalkForm.tsx",
+        7
+      ]
+    ]
+  },
+  "Pets": {
+    "translation": "",
+    "origin": [
+      [
+        "src/react-app/components/WalkForm.tsx",
+        12
+      ]
+    ]
+  },
+  "Pirate": {
+    "translation": "",
+    "origin": [
+      [
+        "src/react-app/components/SelectLanguage.tsx",
+        6
+      ]
+    ]
+  },
+  "Submit": {
+    "translation": "",
+    "origin": [
+      [
+        "src/react-app/components/WalkForm.tsx",
+        21
+      ]
+    ]
+  },
+  "The nation’s largest network of 5‑star pet sitters and dog walkers.": {
+    "translation": "",
+    "origin": [
+      [
+        "src/app/backbone/views/header_view.ts",
+        12
+      ]
+    ]
+  },
+  "US English": {
+    "translation": "",
+    "origin": [
+      [
+        "src/react-app/components/SelectLanguage.tsx",
+        5
+      ]
+    ]
+  },
+  "We’re The Dog People.": {
+    "translation": "",
+    "origin": [
+      [
+        "src/app/backbone/views/header_view.ts",
+        11
+      ]
+    ]
+  },
   "test": {
     "translation": "",
     "origin": [
       [
         "src/app/constants/translationConstants.ts",
-        2
+        3
+      ]
+    ]
+  },
+  "{0, plural, one {Submitted: # walk for {1}} other {Submitted: # walks for {2}}}": {
+    "translation": "",
+    "origin": [
+      [
+        "src/store.ts",
+        39
+      ]
+    ]
+  },
+  "{0, plural, one {Submitted: # walks for {1}} other {Submitted: # walks for {2}}}": {
+    "translation": "",
+    "origin": [
+      [
+        "src/store.ts",
+        39
+      ]
+    ],
+    "obsolete": true
+  },
+  "{petNum, plural, one {Booking for # pet} other {Booking for # pets}}": {
+    "translation": "",
+    "origin": [
+      [
+        "src/app/constants/translationConstants.ts",
+        6
       ]
     ]
   }
